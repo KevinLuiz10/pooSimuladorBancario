@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-3,0,0,1,-66"/>
+    <SyntheticProperty name="formPosition" type="java.awt.Point" value="-84,-19,0,5,115,114,0,14,106,97,118,97,46,97,119,116,46,80,111,105,110,116,-74,-60,-118,114,52,126,-56,38,2,0,2,73,0,1,120,73,0,1,121,120,112,0,0,0,0,0,0,0,0"/>
+    <SyntheticProperty name="formSizePolicy" type="int" value="0"/>
+    <SyntheticProperty name="generatePosition" type="boolean" value="true"/>
+    <SyntheticProperty name="generateSize" type="boolean" value="true"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="labelNome" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelCpf" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="labelDadoNome" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelDadoCpf" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="labelSaldo" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="labelDadoSaldo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="labelQuantAcoes" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelValorTotalCompraAcoes" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelDataCompraAcoes" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelValorCompraAcoes" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelPetrobras" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="labelNConta" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelAgencia" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelDataAbertura" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="labelDadoNConta" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelDadoDataAbertura" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelDadoAgencia" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="labelAcoes" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelTitulo" alignment="0" min="-2" pref="263" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="labelTaxaAdministrativa" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="labelDadoTaxaAdministrativa" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="buttonDepositar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="buttonSacar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="buttonCompraAcoes" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+              <Component id="labelTitulo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelCpf" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelDadoCpf" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelDadoNome" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelNConta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelDadoNConta" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelAgencia" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelDadoAgencia" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelDataAbertura" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelDadoDataAbertura" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelTaxaAdministrativa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelDadoTaxaAdministrativa" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelSaldo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelDadoSaldo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+              <Component id="labelAcoes" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="labelValorTotalCompraAcoes" min="-2" pref="16" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="labelQuantAcoes" min="-2" pref="16" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="labelValorCompraAcoes" min="-2" pref="16" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="labelDataCompraAcoes" min="-2" pref="16" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="labelPetrobras" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="30" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="buttonDepositar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonSacar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonCompraAcoes" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="labelNome">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Nome:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelDataAbertura">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Data de abertura:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelDadoCpf">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Default"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelNConta">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Numero da conta:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelDadoNome">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Default"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelDadoNConta">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Default"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelSaldo">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Saldo (R$):"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelCpf">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="CPF:"/>
+      </Properties>
+      <Events>
+        <EventHandler event="componentHidden" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="labelCpfComponentHidden"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="buttonDepositar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Depositar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonDepositarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelDadoAgencia">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Default"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTitulo">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Visualizacao de Conta Investimento"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelDadoDataAbertura">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Default"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelAgencia">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Agencia:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelDadoTaxaAdministrativa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Default"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="buttonSacar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sacar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonSacarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTaxaAdministrativa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Taxa administrativa mensal (R$): "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelDadoSaldo">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Default"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelQuantAcoes">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Default"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelAcoes">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Default"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelValorTotalCompraAcoes">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Default"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelDataCompraAcoes">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Default"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelValorCompraAcoes">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Default"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelPetrobras">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Default"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="buttonCompraAcoes">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Comprar A&#xe7;&#xf5;es"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonCompraAcoesActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Vender A&#xe7;&#xf5;es"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>

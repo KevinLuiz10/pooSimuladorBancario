@@ -1,0 +1,438 @@
+//Kevin Luiz Botelho Lima - RA: 2266423
+
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JOptionPane;
+import java.time.format.DateTimeFormatter;
+
+
+
+public class FormConsultaCliente extends javax.swing.JFrame {
+    private GerCliente gc = GerCliente.geraGerCliente();
+    private Cliente c1 = new Cliente();
+
+    private static FormConsultaCliente consultaClienteUnic; // 1º passo singleton
+    
+    private FormConsultaCliente() { //2º passo singleton
+        initComponents();
+        
+        // Verificará a data quando a aplicação for aberta
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+                // Código que será executado ao carregar a aplicação
+                txtCpf.setText("");
+                txtCpf.requestFocus();
+                labelVisibilidade(false);
+            }
+        });
+    }
+    
+    public static FormConsultaCliente geraConsultaCliente(){ //3º passo singleton
+        if(consultaClienteUnic == null){
+                consultaClienteUnic = new FormConsultaCliente();
+            }
+            consultaClienteUnic.labelVisibilidade(false);
+            return consultaClienteUnic;
+    }
+    
+    public void labelVisibilidade(boolean a){
+        labelCpf1.setVisible(a);
+        labelNome.setVisible(a);
+        labelCelular.setVisible(a);
+        labelDataNascimento.setVisible(a);
+        labelSexo.setVisible(a);
+        labelDadoCpf.setVisible(a);
+        labelDadoNome.setVisible(a);
+        labelDadoCelular.setVisible(a);
+        labelDadoDataNascimento.setVisible(a);
+        labelDadoSexo.setVisible(a);
+        labelCorrente.setVisible(a);
+        labelPoupanca.setVisible(a);
+        labelInvestimento.setVisible(a);
+        buttonAlterar.setVisible(a);
+        buttonExcluir.setVisible(a);
+        buttonGerenciarContas.setVisible(a);
+        
+        txtCpf.setText("");
+        txtCpf.requestFocus();
+    }
+    
+    public void consultaCliente(){
+        Cliente c1 = new Cliente();
+        
+        
+        try{
+            c1.setCpf(Long.parseLong(txtCpf.getText()));
+            
+            c1 = gc.consClienteCpf(c1);
+            this.c1 = c1;
+        
+            if(c1 == null){
+                JOptionPane.showMessageDialog(
+                    null,
+                    "CPF não cadastrado",
+                    "Erro de consulta",
+                    JOptionPane.ERROR_MESSAGE
+                );
+                labelVisibilidade(false);
+            }else{
+                atualizarLabel(c1);
+            }
+        }catch(NumberFormatException nfe){
+            JOptionPane.showMessageDialog(
+                null,
+                "O CPF deve ser um inteiro!",
+                "Erro de tipo de Dados",
+                JOptionPane.ERROR_MESSAGE
+            );
+            labelVisibilidade(false);
+        }
+    }
+    
+    public void atualizarLabel(Cliente c1){
+        labelDadoCpf.setText(String.valueOf(c1.getCpf()));
+        labelDadoNome.setText(c1.getNome());
+        labelDadoDataNascimento.setText(c1.getDataNascimento().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+        labelDadoSexo.setText(c1.getSexo());
+        labelDadoCelular.setText(String.valueOf(c1.getCelular()));
+        
+        if(c1.getContaCorrente() == null){
+            labelCorrente.setText("- Nao possui conta corrente -");
+        }else{
+            labelCorrente.setText("- Possui conta corrente -");
+        }
+
+        if(c1.getContaPoupanca() == null){
+            labelPoupanca.setText("- Nao possui conta poupanca -");
+        }else{
+            labelPoupanca.setText("- Possui conta poupanca -");
+        }
+
+        if(c1.getContaInvestimento() == null){
+            labelInvestimento.setText("- Nao possui conta de investimento -");
+        }else{
+            labelInvestimento.setText("- Possui conta de investimento -");
+        }
+        
+        labelVisibilidade(true);
+    }
+    
+    public void excluirCadastro() {
+       int resp =  JOptionPane.showConfirmDialog(
+                null,
+                "Deseja realmente excluir o cadastro do cliente?",
+                "Confirmação de Exclusão",
+                JOptionPane.YES_NO_OPTION
+        );
+       if(resp == 0){
+           c1 = gc.delClienteCpf(c1);
+           if (c1 == null){
+               JOptionPane.showMessageDialog(
+                null,
+                "Cadastro EXCLUÍDO com sucesso!",
+                "Exclusão de cadastro",
+                JOptionPane.INFORMATION_MESSAGE
+            );
+            labelVisibilidade(false);
+           }
+       }
+    }
+    
+    public void abreAlteraDadosCliente(){
+        FormAlteraDadosCliente.geraAlteraDadosCliente(c1).setVisible(true);
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        labelTitulo = new javax.swing.JLabel();
+        labelCpf = new javax.swing.JLabel();
+        txtCpf = new javax.swing.JTextField();
+        buttonConsultar = new javax.swing.JButton();
+        buttonCancelar = new javax.swing.JButton();
+        labelCpf1 = new javax.swing.JLabel();
+        labelSexo = new javax.swing.JLabel();
+        labelNome = new javax.swing.JLabel();
+        labelCelular = new javax.swing.JLabel();
+        labelDataNascimento = new javax.swing.JLabel();
+        labelDadoCpf = new javax.swing.JLabel();
+        labelDadoNome = new javax.swing.JLabel();
+        labelDadoDataNascimento = new javax.swing.JLabel();
+        labelDadoSexo = new javax.swing.JLabel();
+        labelDadoCelular = new javax.swing.JLabel();
+        buttonAlterar = new javax.swing.JButton();
+        buttonExcluir = new javax.swing.JButton();
+        labelCorrente = new javax.swing.JLabel();
+        labelPoupanca = new javax.swing.JLabel();
+        labelInvestimento = new javax.swing.JLabel();
+        buttonGerenciarContas = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(400, 300));
+        setSize(new java.awt.Dimension(400, 1000));
+
+        labelTitulo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        labelTitulo.setText("Consulta por CPF");
+
+        labelCpf.setText("CPF:");
+
+        buttonConsultar.setText("Consultar CPF");
+        buttonConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonConsultarActionPerformed(evt);
+            }
+        });
+
+        buttonCancelar.setText("Retornar");
+        buttonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCancelarActionPerformed(evt);
+            }
+        });
+
+        labelCpf1.setText("CPF:");
+        labelCpf1.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                labelCpf1ComponentHidden(evt);
+            }
+        });
+
+        labelSexo.setText("Sexo:");
+
+        labelNome.setText("Nome:");
+
+        labelCelular.setText("Celular:");
+
+        labelDataNascimento.setText("Data de nascimento:");
+
+        labelDadoCpf.setText("Default");
+
+        labelDadoNome.setText("Default");
+
+        labelDadoDataNascimento.setText("Default");
+
+        labelDadoSexo.setText("Default");
+
+        labelDadoCelular.setText("Default");
+
+        buttonAlterar.setText("Alterar dados do cliente");
+        buttonAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonAlterarActionPerformed(evt);
+            }
+        });
+
+        buttonExcluir.setText("Excluir cadastro");
+        buttonExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonExcluirActionPerformed(evt);
+            }
+        });
+
+        labelCorrente.setText("Default");
+
+        labelPoupanca.setText("Default");
+
+        labelInvestimento.setText("Default");
+
+        buttonGerenciarContas.setText("Gerenciar contas");
+        buttonGerenciarContas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonGerenciarContasActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelDataNascimento)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelDadoNome)
+                                    .addComponent(labelDadoDataNascimento)
+                                    .addComponent(labelDadoCpf)
+                                    .addComponent(labelDadoCelular)
+                                    .addComponent(labelDadoSexo))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelInvestimento)
+                            .addComponent(labelPoupanca)
+                            .addComponent(labelCorrente)
+                            .addComponent(labelSexo)
+                            .addComponent(labelCelular)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelCpf)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(buttonAlterar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(buttonExcluir))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(buttonConsultar)
+                                    .addComponent(labelNome)
+                                    .addComponent(labelCpf1))
+                                .addGap(18, 18, 18)
+                                .addComponent(buttonCancelar)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                        .addComponent(buttonGerenciarContas)
+                        .addGap(22, 22, 22))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelTitulo)
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCpf)
+                    .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonConsultar)
+                    .addComponent(buttonCancelar))
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCpf1)
+                    .addComponent(labelDadoCpf))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelNome)
+                    .addComponent(labelDadoNome))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelDataNascimento)
+                    .addComponent(labelDadoDataNascimento))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelSexo)
+                    .addComponent(labelDadoSexo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCelular)
+                    .addComponent(labelDadoCelular))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labelCorrente)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelPoupanca)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelInvestimento)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonAlterar)
+                    .addComponent(buttonExcluir)
+                    .addComponent(buttonGerenciarContas))
+                .addGap(21, 21, 21))
+        );
+
+        setBounds(0, 0, 500, 459);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarActionPerformed
+        dispose();
+    }//GEN-LAST:event_buttonCancelarActionPerformed
+
+    private void labelCpf1ComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_labelCpf1ComponentHidden
+        // TODO add your handling code here:
+    }//GEN-LAST:event_labelCpf1ComponentHidden
+
+    private void buttonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConsultarActionPerformed
+        consultaCliente();
+    }//GEN-LAST:event_buttonConsultarActionPerformed
+
+    private void buttonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExcluirActionPerformed
+        excluirCadastro();
+    }//GEN-LAST:event_buttonExcluirActionPerformed
+
+    private void buttonAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAlterarActionPerformed
+        labelVisibilidade(false);
+        abreAlteraDadosCliente();
+    }//GEN-LAST:event_buttonAlterarActionPerformed
+
+    private void buttonGerenciarContasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGerenciarContasActionPerformed
+        labelVisibilidade(false);
+        geraGerenciaContas();
+    }//GEN-LAST:event_buttonGerenciarContasActionPerformed
+
+    public void geraGerenciaContas(){
+        FormGerenciaContas.geraGerenciaContas(c1).setVisible(true);
+    }
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(FormConsultaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(FormConsultaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(FormConsultaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(FormConsultaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FormConsultaCliente().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonAlterar;
+    private javax.swing.JButton buttonCancelar;
+    private javax.swing.JButton buttonConsultar;
+    private javax.swing.JButton buttonExcluir;
+    private javax.swing.JButton buttonGerenciarContas;
+    private javax.swing.JLabel labelCelular;
+    private javax.swing.JLabel labelCorrente;
+    private javax.swing.JLabel labelCpf;
+    private javax.swing.JLabel labelCpf1;
+    private javax.swing.JLabel labelDadoCelular;
+    private javax.swing.JLabel labelDadoCpf;
+    private javax.swing.JLabel labelDadoDataNascimento;
+    private javax.swing.JLabel labelDadoNome;
+    private javax.swing.JLabel labelDadoSexo;
+    private javax.swing.JLabel labelDataNascimento;
+    private javax.swing.JLabel labelInvestimento;
+    private javax.swing.JLabel labelNome;
+    private javax.swing.JLabel labelPoupanca;
+    private javax.swing.JLabel labelSexo;
+    private javax.swing.JLabel labelTitulo;
+    private javax.swing.JTextField txtCpf;
+    // End of variables declaration//GEN-END:variables
+}
